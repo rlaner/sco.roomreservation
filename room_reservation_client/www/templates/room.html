@@ -1,0 +1,65 @@
+<ion-view view-title="Sala">
+    <ion-nav-buttons side="secondary">
+      <button class="button" ng-click="addEvent()">
+        Prenota
+      </button>
+    </ion-nav-buttons>
+      <ion-tabs class="tabs-positive tabs-icon-top">
+
+          <ion-tab title="Home" icon-on="ion-ios-filing" icon-off="ion-ios-filing-outline">
+              <ion-view>
+                <ion-content>
+                  <div class="item item-image">
+                    <div class="item item-image">
+                        <img ng-src="{{room.fields.image.value}}"/>
+                    </div>
+                    <div class="list">
+
+                          <div class="item item-divider">
+                            Nome
+                          </div>
+
+                          <a class="item" href="#">
+                            {{room.fields.titolo.value}}
+                          </a>
+
+                          <div class="item item-divider">
+                            Indirizzo
+                          </div>
+
+                          <a class="item" href="#">
+                            {{room.fields.indirizzo.value}}
+                          </a>
+
+                          <div class="item item-divider">
+                            Descrizione
+                          </div>
+
+                          <a class="item" href="#">
+                            Numero posti: {{room.fields.numero_posti.value}}
+                          </a>
+
+                    </div>
+                </div>
+                </ion-content>
+            </ion-view>
+          </ion-tab>
+
+          <ion-tab title="Disponibilita'" icon-on="ion-ios-clock" icon-off="ion-ios-clock-outline">
+              <ion-view>
+                <ion-content class="has-footer">
+                  <div ng-if="room != null" ng-init="initCalendars()">
+                      <br/>
+                    <div class="calendar" ng-model="eventSources" calendar="calendar" config="uiConfig.calendar" ui-calendar="uiConfig.calendar"></div>
+                  </div>
+                </ion-content>
+            </ion-view>
+          </ion-tab>
+
+
+      </ion-tabs>
+
+
+
+</ion-view>
+
