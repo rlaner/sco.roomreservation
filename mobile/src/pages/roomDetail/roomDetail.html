@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar color="primary">     
+    <ion-title style="background-color: #f3961c">Info e costi</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+<h1>{{room.name}}</h1>
+<p>{{room.adresse}}<p>
+    Numero di posti {{room.place}}
+    <h2>DESTINAZIONE D'USO</h2>
+<p>{{room.destination}}
+    <h2>DOTAZIONI TECNICHE</h2>
+    {{room.dotation}}
+    <h2>CONTATTI</h2>
+    Referente {{room.reference}} <br>
+    Telefono {{room.telefone}} <br>
+    Fax {{room.fax}}<br>
+    E-mail {{room.mail}}<br>
+ 
+</ion-content>
+
+
+<ion-footer >
+    <ion-toolbar color="primary" >
+     
+      <ion-buttons  start>
+      <button ion-button icon-left color="royal">
+       
+        <ion-icon name="information-circle"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-buttons end>
+      <button ion-button icon-right color="royal" >
+        
+        <ion-icon name="calendar"></ion-icon>
+      </button>
+    </ion-buttons>
+<ion-title style="background-color: #f3961c"></ion-title>
+    </ion-toolbar>
+</ion-footer>

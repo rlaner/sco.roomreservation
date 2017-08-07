@@ -4,6 +4,7 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import {NavigationDetailsPage} from '../pages/roomDetail/roomDetail'
 import {PrenotazionePage} from'../pages/prenotazioni/prenotazioni';
 import {AccediPage} from '../pages/accedi/accedi';
 import { CreditsPage } from '../pages/credits/credits';
@@ -15,6 +16,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   declarations: [
     MyApp,
     HomePage,
+    NavigationDetailsPage,
 PrenotazionePage,
 AccediPage,
 CreditsPage
@@ -27,6 +29,7 @@ CreditsPage
   entryComponents: [
     MyApp,
     HomePage,
+    NavigationDetailsPage,
     PrenotazionePage,
 AccediPage,
 CreditsPage

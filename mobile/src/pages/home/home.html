@@ -1,46 +1,53 @@
 <ion-header>
-  <ion-navbar>
+  <ion-toolbar color="primary">
+    <ion-buttons start>
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title class="title">Trento prenotazioni </ion-title>
-  </ion-navbar>
+ </ion-buttons>
+<ion-title style="background-color: #f3961c">Trento prenotazioni </ion-title>
+
+<ion-buttons  end>
+    <button ion-button menuToggle >
+      <ion-icon name="search" ></ion-icon>
+    </button>
+ </ion-buttons>
+</ion-toolbar>
 </ion-header>
 
-<ion-content padding>
 
-
-  <p>
-  .. <a href="http://ionicframework.com/docs/v2">docs</a> .
-    sala 1 <br>
-    sala 2 <br>
-    ecc
-  </p>
-
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+<ion-content>
+  <ion-list>
+   <button ion-item *ngFor="let room of rooms" (click)="openNavDetailsPage(room)">
+     {{room.name}} <br> <br>
+     {{room.adresse}}<br>
+     <p style="text-align: right">N posti: {{room.place}}</p>
+   </button>
+  </ion-list>
 </ion-content>
 
 
-<ion-footer>
-    <ion-toolbar color="primary">
+<ion-footer  >
+    <ion-toolbar color="primary" >
      
-      <ion-buttons end>
+      <ion-buttons style="background-color: #f3961c" end>
       <button ion-button icon-right color="royal">
        
         <ion-icon name="map"></ion-icon>
       </button>
     </ion-buttons>
 
-    <ion-buttons start>
-      <button ion-button menu-toggle icon-left color="royal" menu-toggle>
+    <ion-buttons style="background-color: #f3961c" start>
+      <button ion-button icon-left color="royal" >
         
         <ion-icon name="list"></ion-icon>
       </button>
     </ion-buttons>
-
+ <ion-title style="background-color: #f3961c"></ion-title>
     </ion-toolbar>
+ 
 </ion-footer>
 
 
   
-  })
+

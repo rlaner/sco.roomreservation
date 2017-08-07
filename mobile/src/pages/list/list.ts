@@ -5,6 +5,14 @@ import { NavController, NavParams } from 'ionic-angular';
   selector: 'page-list',
   templateUrl: 'list.html'
 })
+
+export class NavigationDetailsPage {
+  item;
+
+  constructor(params: NavParams) {
+    this.item = params.data.item;
+  }
+}
 export class ListPage {
   selectedItem: any;
   icons: string[];
@@ -28,10 +36,7 @@ export class ListPage {
     }
   }
 
-  itemTapped(event, item) {
-    // That's right, we're pushing to ourselves!
-    this.navCtrl.push(ListPage, {
-      item: item
-    });
-  }
+ openNavDetailsPage(room) {
+  //  this.nav.push(NavigationDetailsPage, {room:room});
+ }
 }
