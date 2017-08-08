@@ -3,24 +3,27 @@ import { ErrorHandler, NgModule , OnInit} from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
+import {HomeTabPage } from '../pages/homeTab/homeTab'
+import { HomeListPage } from '../pages/homeList/homeList';
 import {NavigationDetailsPage} from '../pages/roomDetail/roomDetail'
 import {PrenotazionePage} from'../pages/prenotazioni/prenotazioni';
 import {AccediPage} from '../pages/accedi/accedi';
 import { CreditsPage } from '../pages/credits/credits';
 import {RoomService} from '../services/room.service'
-
+import {HomeMapPage} from '../pages/homeMap/homeMap'
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage,
+    HomeTabPage,
+    HomeListPage,
     NavigationDetailsPage,
 PrenotazionePage,
 AccediPage,
 CreditsPage,
+HomeMapPage
   ],
   imports: [
     BrowserModule,
@@ -30,12 +33,13 @@ CreditsPage,
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage,
+    HomeTabPage,
+    HomeListPage,
     NavigationDetailsPage,
     PrenotazionePage,
 AccediPage,
 CreditsPage,
-
+HomeMapPage
   ],
   providers: [
     StatusBar,

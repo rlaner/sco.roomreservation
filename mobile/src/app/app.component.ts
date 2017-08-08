@@ -2,8 +2,8 @@ import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-
-import { HomePage } from '../pages/home/home';
+import {HomeMapPage} from '../pages/homeMap/homeMap'
+import { HomeTabPage } from '../pages/homeTab/homeTab';
 import {AccediPage} from '../pages/accedi/accedi';
 import {PrenotazionePage} from '../pages/prenotazioni/prenotazioni';
 import { CreditsPage } from '../pages/credits/credits';
@@ -13,7 +13,7 @@ import { CreditsPage } from '../pages/credits/credits';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomePage;
+  rootPage: any = HomeTabPage;
 
   pages: Array<{icon: string, title: string, component: any}>;
 
@@ -23,7 +23,7 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      {icon: 'home',  title: 'Home', component: HomePage },
+      {icon: 'home',  title: 'Home', component: HomeTabPage },
       {icon: 'calendar', title: 'Prenotazioni', component:PrenotazionePage},
        {icon: 'home', title: 'Accedi', component:AccediPage},
        {icon: 'information-circle', title: 'Credits', component:CreditsPage},
