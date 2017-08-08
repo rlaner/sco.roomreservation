@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { ErrorHandler, NgModule } from '@angular/core';
+import { ErrorHandler, NgModule , OnInit} from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
@@ -8,6 +8,7 @@ import {NavigationDetailsPage} from '../pages/roomDetail/roomDetail'
 import {PrenotazionePage} from'../pages/prenotazioni/prenotazioni';
 import {AccediPage} from '../pages/accedi/accedi';
 import { CreditsPage } from '../pages/credits/credits';
+import {RoomService} from '../services/room.service'
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -19,11 +20,12 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     NavigationDetailsPage,
 PrenotazionePage,
 AccediPage,
-CreditsPage
+CreditsPage,
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -32,11 +34,14 @@ CreditsPage
     NavigationDetailsPage,
     PrenotazionePage,
 AccediPage,
-CreditsPage
+CreditsPage,
+
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    RoomService,
+    
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

@@ -1,42 +1,43 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import {NavigationDetailsPage} from '../roomDetail/roomDetail'
+import {RoomService} from '../../services/room.service'
+import {Room} from '../../app/rooms';
+import { LoadingController } from 'ionic-angular';
+
 
 @Component({
   selector: 'page-home',
-  templateUrl: 'home.html'
+  templateUrl: 'home.html',
+  
 })
-export class HomePage {
-  constructor (public nav:NavController) {}
-  rooms =[
-    {
-    name:"SALA 1",
-    adresse: "Via G.Verdi, 36, Trento",
-    place:20,
-    destination :"conferenze",
-    dotation : "pc e proiettore",
-    reference:"Mr gianni",
-    telefone:"3542987716",
-    fax:"046159624",
-    mail:"ioj@gmail.com"
-  },
-    {
-    name:"SALA 2",
-    adresse: "Via G.Verdi, 36, Trento",
-    place:10,
-    destination :"conferenze",
-    dotation : "pc e proiettore",
-    reference:"Signor Luigi",
-    telefone:"5464646",
-    fax:"046158944",
-    mail:"Luigi@gmail.com"
-    }]
-
-     openNavDetailsPage(item) {
-    this.nav.push(NavigationDetailsPage, { room: item });
-
-  }
+export class HomePage implements OnInit {
+   
  
+    rooms: Room[];
+  constructor (public nav:NavController, public roomService: RoomService, public loadingCtrl: LoadingController) {}
+    
+  openNavDetailsPage(item) {
+    this.nav.push(NavigationDetailsPage, { room: item });
+   }
+
+ ngOnInit(): void {
+    this.getRooms();
+  }
+
+ 
+getRooms(): void {
+    let loading = this.loadingCtrl.create({
+      content: 'Please wait...'
+  });
+  loading.present();
+     this.roomService.getRooms().then(Room =>
+      { 
+        this.rooms = Room;
+        loading.dismiss();
+      });
+      
+    }
   }
 
 
