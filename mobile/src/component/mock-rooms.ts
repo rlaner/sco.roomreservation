@@ -19,7 +19,7 @@ export const ROOMS : Room[]  =[
     name:"SALA 2",
     adresse: "Via G.Verdi, 36, Trento",
     place:10,
-    destination :"conferenze",
+    destination :"conferenze, riunione",
     dotation : "pc e proiettore",
     reference:"Signor Luigi",
     telefone:5464646,
