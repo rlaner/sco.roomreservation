@@ -22,7 +22,7 @@ export const ROOMS : Room[]  =[
     destination :"conferenze, riunione",
     dotation : "pc e proiettore",
     reference:"Signor Luigi",
-    telefone:5464646,
+    telefone:546464555,
   fax:5405050,
     mail:"Luigi@gmail.com",
     cordx:"20 S",
